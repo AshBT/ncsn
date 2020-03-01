@@ -183,6 +183,8 @@ class AnnealRunner():
                     torch.save(states, os.path.join(self.args.log, 'checkpoint_{}.pth'.format(step)))
                     torch.save(states, os.path.join(self.args.log, 'checkpoint.pth'))
 
+                    self.test()
+
     def Langevin_dynamics(self, x_mod, scorenet, n_steps=200, step_lr=0.00005):
         images = []
 
