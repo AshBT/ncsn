@@ -3,7 +3,7 @@ import tqdm
 from losses.dsm import anneal_dsm_score_estimation
 from losses.sliced_sm import anneal_sliced_score_estimation_vr
 import torch.nn.functional as F
-import logging
+# import logging
 import torch
 import os
 import shutil
@@ -149,7 +149,7 @@ class AnnealRunner():
                 optimizer.step()
 
                 tb_logger.add_scalar('loss', loss, global_step=step)
-                logging.info("step: {}, loss: {}".format(step, loss.item()))
+                # logging.info("step: {}, loss: {}".format(step, loss.item()))
 
                 if step >= self.config.training.n_iters:
                     return 0
